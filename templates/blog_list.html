@@ -1,1 +1,11 @@
 estas en mi blos xd
+
+<a href="{% url 'blog:create' %}" >create</a>
+<br>
+
+{% for post in posts %}
+<a href="{% url 'blog:detail' post.id %}"> {{post.title}}</a>
+<a href="{% url 'blog:update' post.id %}" >update</a>
+<a href="{% url 'blog:delete' post.id %}" >delete</a>
+{{post.content}}
+{% endfor %}
